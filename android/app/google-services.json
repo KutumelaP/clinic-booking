@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "138103242978",
+    "project_id": "clinic-5e409",
+    "storage_bucket": "clinic-5e409.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138103242978:android:a71f79b7e2d60e48bd9ebb",
+        "android_client_info": {
+          "package_name": "com.example.clinic_booking_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGdNONaUjidVmWXBWKpTqRAJXYX4axVcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
