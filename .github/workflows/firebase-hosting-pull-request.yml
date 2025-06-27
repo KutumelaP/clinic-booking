@@ -1,18 +1,37 @@
+name: Deploy to Firebase Hosting on pull request
+
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.0'   # Flutter version with Dart 3.8.1+
-          
+          flutter-version: '3.13.0'  # Flutter version with Dart 3.8.1+
+
+      - name: Show Flutter & Dart versions
+        run: |
+          flutter --version
+          dart --version
+
       - name: Install dependencies
         run: flutter pub get
 
       - name: Build web
         run: flutter build web
 
-      # Add your deploy steps here
+      - name: Deploy to Firebase Hosting (preview)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          channelId: pr-${{ github.event.number }}
+          projectId: clinic-5e409
