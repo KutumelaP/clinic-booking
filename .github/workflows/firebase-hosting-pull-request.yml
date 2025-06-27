@@ -7,7 +7,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.13.0'   # Set to a Flutter version that includes Dart 3.8.1+
+          flutter-version: '3.13.0'   # Flutter version with Dart 3.8.1+
           
       - name: Install dependencies
         run: flutter pub get
@@ -15,4 +15,4 @@ jobs:
       - name: Build web
         run: flutter build web
 
-      # Add other deploy steps here...
+      # Add your deploy steps here
